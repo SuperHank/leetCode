@@ -1,18 +1,12 @@
+package solved;
+
 import java.util.Arrays;
 
 /**
- * 最后一块石头的重量II
+ * [1049] 最后一块石头的重量 II
  * https://leetcode-cn.com/problems/last-stone-weight-ii/
  */
 public class LastStoneWeightII {
-
-    public static void main(String[] args) {
-        System.out.println(new LastStoneWeightII().lastStoneWeightII(new int[]{2, 7, 4, 1, 8, 1}));
-        System.out.println(new LastStoneWeightII().lastStoneWeightII(new int[]{31, 26, 33, 21, 40}));
-        System.out.println(new LastStoneWeightII().lastStoneWeightII(new int[]{1, 2}));
-        System.out.println(new LastStoneWeightII().lastStoneWeightII(new int[]{21, 60, 61, 20, 31}));
-    }
-
     public int lastStoneWeightII(int[] stones) {
         stones = Arrays.stream(stones).sorted().toArray();
         int sum = Arrays.stream(stones).sum();

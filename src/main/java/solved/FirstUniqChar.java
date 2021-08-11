@@ -1,18 +1,13 @@
+package solved;
+
 import java.util.HashMap;
 
 /**
- * 字符串中的第一个唯一字符
+ * [387] 字符串中的第一个唯一字符
  * https://leetcode-cn.com/problems/first-unique-character-in-a-string/
  */
 public class FirstUniqChar {
-
-    public static void main(String[] args) {
-        System.out.println(new FirstUniqChar().firstUniqChar("leetcode"));
-        System.out.println(new FirstUniqChar().firstUniqChar("loveleetcode"));
-    }
-
     public int firstUniqChar(String s) {
-
         char[] chars = s.toCharArray();
 
         HashMap<Character, Integer> map = new HashMap<>();
