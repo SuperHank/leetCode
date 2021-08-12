@@ -11,7 +11,6 @@ public class Jump {
         System.out.println(new Jump().jump(new int[]{2, 3, 0, 1, 4}));
     }
 
-
     /**
      * 暴力破解
      */

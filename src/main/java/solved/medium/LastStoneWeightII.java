@@ -1,4 +1,4 @@
-package solved;
+package solved.medium;
 
 import java.util.Arrays;
 

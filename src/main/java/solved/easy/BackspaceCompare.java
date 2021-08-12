@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [844] 比较含退格的字符串

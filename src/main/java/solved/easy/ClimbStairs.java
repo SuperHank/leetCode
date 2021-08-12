@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [70] 爬楼梯

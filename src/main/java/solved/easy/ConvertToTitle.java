@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [168] Excel表列名称

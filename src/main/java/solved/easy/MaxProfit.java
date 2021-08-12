@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [121] 买卖股票的最佳时机

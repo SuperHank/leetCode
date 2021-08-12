@@ -1,4 +1,4 @@
-package solved;
+package solved.medium;
 
 /**
  * [198] 打家劫舍

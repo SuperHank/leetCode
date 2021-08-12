@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [392] 判断子序列

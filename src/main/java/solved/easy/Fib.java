@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [509] 斐波那契数

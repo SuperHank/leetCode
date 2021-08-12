@@ -1,4 +1,4 @@
-package solved;
+package solved.medium;
 
 /**
  * [63] 不同路径 II

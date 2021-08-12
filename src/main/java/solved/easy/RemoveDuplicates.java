@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [26] 删除有序数组重的重复项

@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [746] 使用最小花费爬楼梯

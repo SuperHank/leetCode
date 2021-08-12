@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 /**
  * [1137] 第 N 个泰波那契数

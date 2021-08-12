@@ -1,4 +1,4 @@
-package solved;
+package solved.easy;
 
 import javafx.util.Pair;
 

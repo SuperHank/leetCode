@@ -1,4 +1,4 @@
-package solved;
+package solved.medium;
 
 /**
  * [165] 比较版本号

@@ -1,4 +1,4 @@
-package solved;
+package solved.medium;
 
 public class RobII {
     public static void main(String[] args) {

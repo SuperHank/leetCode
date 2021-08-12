@@ -1,7 +1,11 @@
-package solved;
+package solved.easy;
 
 import java.util.ArrayList;
 
+/**
+ * [155] 最小栈
+ * https://leetcode-cn.com/problems/min-stack/
+ */
 public class MinStack {
     private ArrayList<Integer> list;
 
