@@ -1,5 +1,7 @@
 package attempted;
 
+import java.util.Arrays;
+
 /**
  * [45] 跳跃游戏 II
  * https://leetcode-cn.com/problems/jump-game-ii/
@@ -12,9 +14,30 @@ public class Jump {
     }
 
     /**
-     * 暴力破解
+     * 动态规划
      */
     public int jump(int[] nums) {
+        if (nums.length == 1) {
+            return 0;
+        }
+
+        int dp[] = new int[nums.length];
+        dp[nums.length - 1] = 0;
+
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (i + nums[i] >= nums.length) {
+                dp[i] = 1;
+            } else {
+                dp[i] = dp[i + 1] + 1;
+            }
+        }
+        return Arrays.stream(dp).max().getAsInt();
+    }
+
+    /**
+     * 暴力破解
+     */
+    public int jump_(int[] nums) {
         if (nums.length == 1) {
             return 0;
         }

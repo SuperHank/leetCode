@@ -14,7 +14,7 @@ public class MaxScoreSightseeingPair {
     /**
      * 暴力破解
      */
-    public int maxScoreSightseeingPair(int[] values) {
+    public int maxScoreSightseeingPair_(int[] values) {
         if (values.length < 2) {
             return 0;
         }
@@ -33,7 +33,7 @@ public class MaxScoreSightseeingPair {
      * TODO
      * 动态规划
      */
-    public int maxScoreSightseeingPair_(int[] values) {
+    public int maxScoreSightseeingPair(int[] values) {
         if (values.length < 2) {
             return 0;
         }
