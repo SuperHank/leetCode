@@ -9,17 +9,17 @@ import java.util.LinkedList;
 public class IsMatch {
 
     public static void main(String[] args) {
-//        System.out.println(new IsMatch().isMatch("aa", "a"));
-//        System.out.println(new IsMatch().isMatch("aa", "a*"));
-//        System.out.println(new IsMatch().isMatch("ab", ".*"));
-//        System.out.println(new IsMatch().isMatch("aab", "c*a*b"));
-//        System.out.println(new IsMatch().isMatch("mississippi", "mis*is*p*."));
-//        System.out.println(new IsMatch().isMatch("mississippi", "mis*is*ip*."));
-//        System.out.println(new IsMatch().isMatch("aaa", "ab*a*c*a"));
-//        System.out.println(new IsMatch().isMatch("aaa", ".*"));
-//        System.out.println(new IsMatch().isMatch("baaa", "b.*"));
+        System.out.println(new IsMatch().isMatch("aa", "a"));
+        System.out.println(new IsMatch().isMatch("aa", "a*"));
+        System.out.println(new IsMatch().isMatch("ab", ".*"));
+        System.out.println(new IsMatch().isMatch("aab", "c*a*b"));
+        System.out.println(new IsMatch().isMatch("mississippi", "mis*is*p*."));
+        System.out.println(new IsMatch().isMatch("mississippi", "mis*is*ip*."));
+        System.out.println(new IsMatch().isMatch("aaa", "ab*a*c*a"));
+        System.out.println(new IsMatch().isMatch("aaa", ".*"));
+        System.out.println(new IsMatch().isMatch("baaa", "b.*"));
         System.out.println(new IsMatch().isMatch("baaaa", "ba.*"));
-//        System.out.println(new IsMatch().isMatch("aaaa", "ab*a*c*a"));
+        System.out.println(new IsMatch().isMatch("aaaa", "ab*a*c*a"));
     }
 
     public boolean isMatch(String s, String p) {

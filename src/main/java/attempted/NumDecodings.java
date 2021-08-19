@@ -6,15 +6,15 @@ package attempted;
  */
 public class NumDecodings {
     public static void main(String[] args) {
-//        System.out.println(new NumDecodings().numDecodings("12"));
-//        System.out.println(new NumDecodings().numDecodings("226"));
-//        System.out.println(new NumDecodings().numDecodings("0"));
-//        System.out.println(new NumDecodings().numDecodings("06"));
+        System.out.println(new NumDecodings().numDecodings("12"));
+        System.out.println(new NumDecodings().numDecodings("226"));
+        System.out.println(new NumDecodings().numDecodings("0"));
+        System.out.println(new NumDecodings().numDecodings("06"));
         System.out.println(new NumDecodings().numDecodings("200"));
         System.out.println(new NumDecodings().numDecodings("11106"));
         System.out.println(new NumDecodings().numDecodings("12201"));
-//        System.out.println(new NumDecodings().numDecodings("12301"));
-//        System.out.println(new NumDecodings().numDecodings("19101"));
+        System.out.println(new NumDecodings().numDecodings("12301"));
+        System.out.println(new NumDecodings().numDecodings("19101"));
     }
 
     public int numDecodings(String s) {
