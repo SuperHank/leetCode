@@ -1,4 +1,4 @@
-package attempted;
+package solved.medium;
 
 /**
  * [45] 跳跃游戏 II
@@ -9,22 +9,31 @@ public class Jump {
     public static void main(String[] args) {
         System.out.println(new Jump().jump(new int[]{2, 3, 1, 1, 4}));
         System.out.println(new Jump().jump(new int[]{2, 3, 0, 1, 4}));
+        System.out.println(new Jump().jump(new int[]{1, 1, 1, 1}));
     }
 
     /**
      * 动态规划
      */
     public int jump(int[] nums) {
+        // 跳到当前位置的最小步数
         int dp[] = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            dp[i] = Integer.MAX_VALUE;
+        }
         dp[0] = 0;
 
-        for (int i = 1; i < nums.length; i--) {
-            if (i + nums[i] >= nums.length - 1) {
-
-            } else {
-
+        for (int i = 0; i < nums.length - 1; i++) {
+            int tmp = 1;
+            while (tmp <= nums[i]) {
+                if (i + tmp >= nums.length) {
+                    break;
+                }
+                dp[i + tmp] = Math.min(dp[i] + 1, dp[i + tmp]);
+                tmp++;
             }
         }
+
         return dp[nums.length - 1];
     }
 
