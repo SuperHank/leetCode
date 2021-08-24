@@ -1,7 +1,7 @@
 package solved.medium;
 
 /**
- * [377] 组合总合 IV
+ * [377] 组合总和 IV
  * https://leetcode-cn.com/problems/combination-sum-iv/
  */
 public class CombinationSum4 {
