@@ -12,7 +12,7 @@ public class Combine {
 
     public static void main(String[] args) {
         System.out.println(new Combine().combine(4, 2));
-//        System.out.println(new Combine().combine(1, 1));
+        System.out.println(new Combine().combine(1, 1));
     }
 
     public List<List<Integer>> combine(int n, int k) {
