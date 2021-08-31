@@ -17,7 +17,6 @@ public class LongestCommonSubsequence {
         char[] arr2 = text2.toCharArray();
 
         int dp[][] = new int[text1.length() + 1][text2.length() + 1];
-        dp[0][0] = 0;
 
         for (int i = 1; i < arr1.length + 1; i++) {
             for (int j = 1; j < arr2.length + 1; j++) {
