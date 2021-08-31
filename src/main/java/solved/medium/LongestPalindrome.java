@@ -5,8 +5,6 @@ import javafx.util.Pair;
 /**
  * [5] 最长回文子串
  * https://leetcode-cn.com/problems/longest-palindromic-substring/
- *
- * @author shihuan
  */
 public class LongestPalindrome {
     public static void main(String[] args) {
