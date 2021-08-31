@@ -1,4 +1,4 @@
-package attempted;
+package solved.medium;
 
 /**
  * [300] 最长递增子序列
@@ -16,26 +16,20 @@ public class LengthOfLIS {
 
     public int lengthOfLIS(int[] nums) {
         int dp[] = new int[nums.length];
-        dp[0] = 1;
-        int min = nums[0];
-        int max = nums[0];
-        int maxLength = 1;
 
+        for (int i = 0; i < nums.length; i++) {
+            dp[i] = 1;
+        }
+
+        int max = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > nums[i - 1] && nums[i] > max) {
-                dp[i] = dp[i - 1] + 1;
-                maxLength = Math.max(maxLength, dp[i]);
-                max = Math.max(max, nums[i]);
-            } else {
-                if (nums[i] < min) {
-                    min = Math.min(min, nums[i]);
-                    max = min;
-                    dp[i] = 1;
-                } else {
-                    dp[i] = dp[i - 1];
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                    max = Math.max(dp[i], max);
                 }
             }
         }
-        return maxLength;
+        return max;
     }
 }
