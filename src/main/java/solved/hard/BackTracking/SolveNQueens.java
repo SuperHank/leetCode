@@ -1,8 +1,9 @@
-package attempted;
+package solved.hard.BackTracking;
 
 import javafx.util.Pair;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,19 +24,21 @@ public class SolveNQueens {
 
         LinkedList<String> path = new LinkedList<>();
 
-        backTracking(n, 0, new int[n], path, res);
+        backTracking(n, new int[n], path, res);
 
         return res;
     }
 
-    private void backTracking(int n, int startIndex, int[] used, LinkedList<String> path, List<List<String>> res) {
+    private void backTracking(int n, int[] used, LinkedList<String> path, List<List<String>> res) {
 
         if (path.size() == n) {
-
+            if (check(path)) {
+                res.add(new ArrayList<>(path));
+            }
             return;
         }
 
-        for (int i = startIndex; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             if (used[i] == 1) {
                 continue;
             }
@@ -49,15 +52,32 @@ public class SolveNQueens {
                 }
             }
             path.add(builder.toString());
-            backTracking(n, i + 1, used, path, res);
+            backTracking(n, used, path, res);
             path.removeLast();
+            used[i] = 0;
         }
     }
 
     private boolean check(LinkedList<String> path) {
         ArrayList<Pair<Integer, Integer>> position = new ArrayList<>();
-        for (String s : path) {
-
+        Iterator<String> iterator = path.iterator();
+        int rowIndex = 0;
+        while (iterator.hasNext()) {
+            String next = iterator.next();
+            int colIndex = next.indexOf("Q");
+            position.add(new Pair<Integer, Integer>(rowIndex, colIndex));
+            rowIndex++;
         }
+
+        for (int i = 1; i < position.size(); i++) {
+            Pair<Integer, Integer> currentQ = position.get(i);
+            for (int j = 0; j < i; j++) {
+                Pair<Integer, Integer> checkQ = position.get(j);
+                if (currentQ.getValue() - checkQ.getValue() == i - j || currentQ.getValue() - checkQ.getValue() == j - i) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
