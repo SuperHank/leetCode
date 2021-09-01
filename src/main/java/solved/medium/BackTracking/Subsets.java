@@ -20,6 +20,7 @@ public class Subsets {
         LinkedList<Integer> path = new LinkedList<>();
 
         nums = Arrays.stream(nums).sorted().toArray();
+
         backTracking(nums, 0, path, res);
 
         res.add(Collections.emptyList());
