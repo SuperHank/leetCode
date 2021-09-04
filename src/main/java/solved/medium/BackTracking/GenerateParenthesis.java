@@ -17,61 +17,36 @@ public class GenerateParenthesis {
 
 
     public List<String> generateParenthesis(int n) {
-        List<String> res = new ArrayList<>();
+        ArrayList<String> res = new ArrayList<>();
 
         LinkedList<String> path = new LinkedList<>();
 
-        backTracking(n, 0, 0, 0, path, res);
+        backTracking(n, 0, 0, path, res);
 
         return res;
     }
 
-    private void backTracking(int n, int leftCount, int rightCount, int startIndex, LinkedList<String> path, List<String> res) {
-        if (path.size() == 2 * n) {
-            if (leftCount == rightCount) {
-                res.add(String.join("", path));
-            }
+    private void backTracking(int n, int leftCount, int rightCount, LinkedList<String> path, ArrayList<String> res) {
+        if (leftCount > n || rightCount > n || rightCount > leftCount) {
+            return;
+        }
+        if (leftCount == rightCount && leftCount == n) {
+            res.add(String.join("", path));
             return;
         }
 
-        for (int i = startIndex; i < 2 * n; i++) {
-            if (leftCount > n) {
-                return;
-            } else if (leftCount == n) {
-                path.add(")");
-                rightCount++;
-                backTracking(n, leftCount, rightCount, i + 1, path, res);
-                path.removeLast();
-                rightCount--;
-            } else {
-                if (rightCount > leftCount) {
-                    return;
-                } else if (rightCount == leftCount) {
-                    path.add("(");
-                    leftCount++;
-                    backTracking(n, leftCount, rightCount, i + 1, path, res);
-                    path.removeLast();
-                    leftCount--;
-                } else {
-                    path.addLast("(");
-                    leftCount++;
-                    if (leftCount > n) {
-                        return;
-                    }
-                    backTracking(n, leftCount, rightCount, i + 1, path, res);
-                    path.removeLast();
-                    leftCount--;
+        if (leftCount == n) {
+            path.addLast(")");
+            backTracking(n, leftCount, rightCount + 1, path, res);
+            path.removeLast();
+        } else {
+            path.addLast("(");
+            backTracking(n, leftCount + 1, rightCount, path, res);
+            path.removeLast();
 
-                    path.addLast(")");
-                    rightCount++;
-                    if (rightCount > leftCount) {
-                        return;
-                    }
-                    backTracking(n, leftCount, rightCount, i + 1, path, res);
-                    path.removeLast();
-                    rightCount--;
-                }
-            }
+            path.addLast(")");
+            backTracking(n, leftCount, rightCount + 1, path, res);
+            path.removeLast();
         }
     }
 }
