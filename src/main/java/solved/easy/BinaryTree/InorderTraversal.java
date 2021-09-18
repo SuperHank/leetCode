@@ -1,4 +1,4 @@
-package solved.easy.DynamicProgramming;
+package solved.easy.BinaryTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

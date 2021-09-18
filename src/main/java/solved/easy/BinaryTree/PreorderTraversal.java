@@ -1,67 +1,66 @@
-package solved.easy.DynamicProgramming;
+package solved.easy.BinaryTree;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * [145] 二叉树的后序遍历
- * https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+ * [144] 二叉树的前序遍历
+ * https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
  */
-public class PostorderTraversal {
-
+public class PreorderTraversal {
     public static void main(String[] args) {
         TreeNode root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
-        System.out.println(new PostorderTraversal().postorderTraversal_iter_comm(root1));
+        System.out.println(new PreorderTraversal().preorderTraversal(root1));
         TreeNode root2 = new TreeNode(1, new TreeNode(2), null);
-        System.out.println(new PostorderTraversal().postorderTraversal_iter_comm(root2));
+        System.out.println(new PreorderTraversal().preorderTraversal(root2));
         TreeNode root3 = new TreeNode(1, null, new TreeNode(2));
-        System.out.println(new PostorderTraversal().postorderTraversal_iter_comm(root3));
+        System.out.println(new PreorderTraversal().preorderTraversal(root3));
     }
 
     /**
      * 递归法
      */
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
-        postOrder(root, result);
+        preOrder(root, result);
         return result;
     }
 
-    public void postOrder(TreeNode root, ArrayList<Integer> result) {
+    public void preOrder(TreeNode root, ArrayList<Integer> result) {
         if (root == null) {
             return;
         }
-        postOrder(root.left, result);
-        postOrder(root.right, result);
         result.add(root.val);
+        preOrder(root.left, result);
+        preOrder(root.right, result);
     }
 
     /**
      * 迭代法
      */
-    public List<Integer> postorderTraversal_iter(TreeNode root) {
+    public List<Integer> preorderTraversal_iter(TreeNode root) {
         if (root == null) {
-            return Collections.emptyList();
+            return new ArrayList<>();
         }
-        ArrayList<Integer> result = new ArrayList<>();
+
+        ArrayList<Integer> res = new ArrayList<>();
         LinkedList<TreeNode> stack = new LinkedList<>();
         stack.addLast(root);
-
         while (!stack.isEmpty()) {
-            TreeNode current = stack.removeLast();
+            TreeNode last = stack.removeLast();
 
-            result.add(current.val);
-            if (current.left != null) {
-                stack.addLast(current.left);
+            res.add(last.val);
+
+            if (last.right != null) {
+                stack.addLast(last.right);
             }
-            if (current.right != null) {
-                stack.addLast(current.right);
+            if (last.left != null) {
+                stack.addLast(last.left);
             }
         }
-        Collections.reverse(result);
-        return result;
+
+        return res;
     }
 
     /**
@@ -79,8 +78,6 @@ public class PostorderTraversal {
             if (current != null) {
                 current = stack.removeLast();
 
-                stack.addLast(current);
-                stack.addLast(null);
 
                 if (current.right != null) {
                     stack.addLast(current.right);
@@ -88,6 +85,8 @@ public class PostorderTraversal {
                 if (current.left != null) {
                     stack.addLast(current.left);
                 }
+                stack.addLast(current);
+                stack.addLast(null);
             } else {
                 stack.removeLast();
 
@@ -99,5 +98,24 @@ public class PostorderTraversal {
         }
 
         return res;
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode() {
+    }
+
+    TreeNode(int val) {
+        this.val = val;
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }

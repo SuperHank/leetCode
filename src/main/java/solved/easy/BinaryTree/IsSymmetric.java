@@ -1,4 +1,4 @@
-package solved.easy.DynamicProgramming;
+package solved.easy.BinaryTree;
 
 /**
  * [100] 相同的树
@@ -74,6 +74,4 @@ public class IsSymmetric {
         }
         return test(left.left, right.right) && test(left.right, right.left);
     }
-
-
 }

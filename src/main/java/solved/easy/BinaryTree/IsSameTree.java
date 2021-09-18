@@ -1,4 +1,4 @@
-package solved.easy.DynamicProgramming;
+package solved.easy.BinaryTree;
 
 
 /**
